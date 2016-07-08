@@ -4,7 +4,6 @@ jQuery( function ( $ ) {
 		$removebutton = $( '.meta-box-upload-button-remove' );
     $addmorebutton = $( '.meta-box-upload-button-addmore' );
 	$('#meta_box_id').on( 'click', '.meta-box-upload-button', function ( event ) {
-    console.log(this);
 		event.preventDefault();
 		var $this = $( this ),
 			id = $this.attr( 'id' );

@@ -22,8 +22,19 @@
  	}
 
  	function setup_media_box() {
- 		add_meta_box( 'meta_box_id', __( 'Media Upload', 'upload-meta-box' ), array( $this, 'media_meta_box_contents' ), 'post', 'normal' );
- 	}
+    $post_types = array( 'post', 'page', );
+    foreach( $post_types as $post_type )
+     {
+         add_meta_box(
+             'meta_box_id', // $id
+             __( 'Media Upload', 'upload-meta-box' ), // $title
+             array( $this, 'media_meta_box_contents' ), // $callback
+              $post_type,
+             'normal', // $context
+             'high' // $priority
+         );
+     }
+   }
 
  	function media_meta_box_contents() {
 
